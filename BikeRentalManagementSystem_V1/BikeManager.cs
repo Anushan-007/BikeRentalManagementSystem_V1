@@ -23,8 +23,7 @@ namespace BikeRentalManagementSystem_V1
             var Brand = Console.ReadLine();
             Console.WriteLine("Enter the Model");
             var Model = Console.ReadLine();
-            Console.WriteLine("Enter the Rental Price");
-            var RentalPrice = decimal.Parse(Console.ReadLine());
+            var RentalPrice = ValidateBikeRentalPrice();
 
             var bikes = new Bike()
             {
@@ -64,8 +63,7 @@ namespace BikeRentalManagementSystem_V1
                 var NBrand = Console.ReadLine();
                 Console.WriteLine("Enter the Model");
                 var NModel = Console.ReadLine();
-                Console.WriteLine("Enter the Rental Price");
-                var NPrice = decimal.Parse(Console.ReadLine());
+                var NPrice = ValidateBikeRentalPrice();
 
                 var newBikes = new Bike()
                 {
@@ -99,10 +97,32 @@ namespace BikeRentalManagementSystem_V1
             }
         }
 
+        public int ValidateBikeRentalPrice()
+        {
+            var price = 0;
+            while (true)
+            {
+                Console.WriteLine("Enter the Rental Price");
+                var RPrice = int.Parse(Console.ReadLine());
+
+                if (RPrice > 0)
+                {
+                    RPrice = price;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Not valid");
+                }
+            }
+            return price;
+        }
+
+
 
 
     }
-    
+
 
 }
 
