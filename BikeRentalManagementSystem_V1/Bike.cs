@@ -27,6 +27,11 @@ namespace BikeRentalManagementSystem_V1
             return $"Bike ID: {bikeId}, Brand: {Brand}, Model: {Model}, Rental Price: {RentalPrice}\r\n";
         }
 
+        public virtual string DisplayBikeInfo()
+        {
+            return $"Bike Id: {BikeId}, Brand:{Brand}, Model:{Model}, Rental Price: {RentalPrice}";
+        }
+
 
     }
 }

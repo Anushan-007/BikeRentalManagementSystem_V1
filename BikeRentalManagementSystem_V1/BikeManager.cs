@@ -75,6 +75,7 @@ namespace BikeRentalManagementSystem_V1
                     RentalPrice = NPrice
                 };
                 this.BikeList.Add(newBikes);
+                Console.WriteLine("Successfully Updated");
             }
             else
             {
@@ -90,7 +91,7 @@ namespace BikeRentalManagementSystem_V1
             if (BikeId != null)
             {
                 //this.BikeList.Remove(FindId);
-                Console.WriteLine("Succesfully Added");
+                Console.WriteLine("Succesfully Deleted");
             }
             else
             {
