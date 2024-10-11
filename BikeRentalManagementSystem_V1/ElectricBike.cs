@@ -16,14 +16,15 @@ namespace BikeRentalManagementSystem_V1
         public string MotorPower { get; set; }
 
 
-        public static string DisplayElectricBikeInfo()
-        {
-            return $" Brand:{Brand}, Model: {Model}, Rental Price: {RentalPrice}, Battery Capazity: {BatteryCapacity}, Motor Power: {MotorPower}";
-        }
+        //public static string DisplayElectricBikeInfo()
+        //{
+        //    return $" Brand:{Brand}, Model: {Model}, Rental Price: {RentalPrice}, Battery Capazity: {BatteryCapacity}, Motor Power: {MotorPower}";
+        //}
 
-        public override string DisplayBikeInfo()
-        {
-            return $"Bike Id: {BikeId}, Brand:{Brand}, Model:{Model}, Rental Price: {RentalPrice} , Battery Capazity: {BatteryCapacity}, Motor Power{MotorPower}" ;
-        }
+        //public override string DisplayBikeInfo()
+        //{
+        //    return $"Bike Id: {BikeId}, Brand:{Brand}, Model:{Model}, Rental Price: {RentalPrice} , Battery Capazity: {BatteryCapacity}, Motor Power{MotorPower}" ;
+        //}
+
     }
 }
