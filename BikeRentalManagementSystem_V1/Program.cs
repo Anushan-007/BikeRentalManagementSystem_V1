@@ -21,8 +21,8 @@ namespace BikeRentalManagementSystem_V1
 
             var ManagerObj = new BikeManager();
 
-            
-            while (true)
+            var status = true;
+            while (status)
             {
                 Console.WriteLine("................................");
                 Console.WriteLine("Bike Rental Management System: ");
@@ -49,7 +49,7 @@ namespace BikeRentalManagementSystem_V1
                         ManagerObj.DeleteBike();
                         break;
                     case "5":
-                       
+                        status = false;
                         break;
                     default:
                         Console.Clear();
