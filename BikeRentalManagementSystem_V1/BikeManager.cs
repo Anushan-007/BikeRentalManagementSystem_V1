@@ -6,93 +6,100 @@ using System.Threading.Tasks;
 
 namespace BikeRentalManagementSystem_V1
 {
-    internal class BikeManager
+    public class BikeManager
     {
-        BikeList = new List<Bike>();
-    }
-    public List<Bike> BikeList;
 
-
-    public void CreateBike()
-    {
-        Console.WriteLine("Enter the ID");
-        var BikeId = int.Parse(Console.ReadLine());
-        Console.WriteLine("Enter the Brand");
-        var Brand = Console.ReadLine();
-        Console.WriteLine("Enter the Model");
-        var Model = Console.ReadLine();
-        Console.WriteLine("Enter the Rental Price");
-        var RentalPrice = decimal.Parse(Console.ReadLine());
-
-        var bikes = new Bike()
+        public BikeManager()
         {
-            BikeId = BikeId,
-            Brand = Brand,
-            Model = Model,
-            RentalPrice = RentalPrice
-        };
-        this.BikeList.Add(bikes);
-    }
-
-    public void ReadBikes()
-    {
-        if(BikeList.Count > 0)
-        {
-            foreach (var item in BikeList)
-            {
-                Console.WriteLine(item);
-            }
+            BikeList = new List<Bike>();
         }
-        else
-        {
-            Console.WriteLine("No Bikes Available");
-        }
-    }
+        public List<Bike> BikeList;
 
-    public void UpdateBike()
-    {
-        Console.WriteLine("Enter the ID");
-        var BikeId = int.Parse(Console.ReadLine());
-        var FindId = this.BikeList.Where(p => p.BikeId == BikeId).SingleOrDefault();
-        if(FindId != null)
+        public void CreateBike()
         {
-            this.BikeList.Remove(FindId);
+            Console.WriteLine("Enter the ID");
+            var BikeId = Console.ReadLine();
             Console.WriteLine("Enter the Brand");
-            var NBrand = Console.ReadLine();
+            var Brand = Console.ReadLine();
             Console.WriteLine("Enter the Model");
-            var NModel = Console.ReadLine();
+            var Model = Console.ReadLine();
             Console.WriteLine("Enter the Rental Price");
-            var NPrice = decimal.Parse(Console.ReadLine());
+            var RentalPrice = decimal.Parse(Console.ReadLine());
 
-            var newBikes = new Bike()
+            var bikes = new Bike()
             {
-                BikeId = BikeId,
-                Brand = NBrand,
-                Model = NModel,
-                RentalPrice = NPrice
-            }
-            this.BikeList.Add(newBikes);
+                //BikeId = BikeId,
+                Brand = Brand,
+                Model = Model,
+                RentalPrice = RentalPrice
+            };
+            this.BikeList.Add(bikes);
+            Console.WriteLine("Successfully Created");
         }
-        else
-        {
-            Console.WriteLine("Not Found");
-        }
-    }
 
-    public void DeleteBike()
-    {
-        Console.WriteLine("Enter the ID");
-        var BikeId = int.Parse(Console.ReadLine());
-        var FindId = this.BikeList.Where(p => p.BikeId == BikeId).SingleOrDefault();
-        if(FindId != null)
+        public void ReadBikes()
         {
-            this.BikeList.Remove(FindId);
-            Console.WriteLine("Succesfully Added");
+            if (BikeList.Count > 0)
+            {
+                foreach (var item in BikeList)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Bikes Available");
+            }
         }
-        else
+
+        public void UpdateBike()
         {
-            Console.WriteLine("Not Found");
+            Console.WriteLine("Enter the ID");
+            var BikeId = Console.ReadLine();
+            //var FindId = this.BikeList.Where(p => p.BikeId == BikeId).SingleOrDefault();
+            if (BikeId != null)
+            {
+                //this.BikeList.Remove(FindId);
+                Console.WriteLine("Enter the Brand");
+                var NBrand = Console.ReadLine();
+                Console.WriteLine("Enter the Model");
+                var NModel = Console.ReadLine();
+                Console.WriteLine("Enter the Rental Price");
+                var NPrice = decimal.Parse(Console.ReadLine());
+
+                var newBikes = new Bike()
+                {
+                    //BikeId = BikeId,
+                    Brand = NBrand,
+                    Model = NModel,
+                    RentalPrice = NPrice
+                };
+                this.BikeList.Add(newBikes);
+            }
+            else
+            {
+                Console.WriteLine("Not Found");
+            }
         }
+
+        public void DeleteBike()
+        {
+            Console.WriteLine("Enter the ID");
+            var BikeId = Console.ReadLine();
+            //var FindId = this.BikeList.Where(p => p.BikeId == BikeId).SingleOrDefault();
+            if (BikeId != null)
+            {
+                //this.BikeList.Remove(FindId);
+                Console.WriteLine("Succesfully Added");
+            }
+            else
+            {
+                Console.WriteLine("Not Found");
+            }
+        }
+
     }
+    
 
 }
+
